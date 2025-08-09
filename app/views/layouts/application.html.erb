@@ -21,7 +21,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body data-controller="modal-opener" data-action="click@window->modal-opener#closeIfOutside">
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
