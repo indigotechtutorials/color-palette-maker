@@ -41,3 +41,5 @@ Open your favorite browser and head to http://localhost:3000
 With our preview page you can see how your color scheme would look on a real website UI.
 
 Configure your colors to be used as different parts of the UI ( Background Color, Header Color, Paragraph Color, Button Background, and Button Text Color)
+
+<img width="1710" height="981" alt="Screenshot 2025-08-09 at 6 38 14 PM" src="https://github.com/user-attachments/assets/64eda758-d332-4ebf-a263-24c27ded3a04" />
