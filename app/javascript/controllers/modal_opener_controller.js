@@ -17,6 +17,18 @@ export default class extends Controller {
     }, 500)
   }
 
+  close(e) {
+    if (e.target.nodeName.toLowerCase() == "a") {
+      e.preventDefault()
+    }
+    
+    let dialog = e.target.closest("dialog")
+    if (!dialog) {
+      console.log("Called close outside of a dialog element. Not supported yet")
+    }
+    dialog.close()
+  }
+
   closeIfOutside(e) {
     if (this.modalOpening) {
       return

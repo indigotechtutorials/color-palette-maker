@@ -1,9 +1,14 @@
 module ColorPalettes
   class ColorsController < ApplicationController
     before_action :set_color_palette
-    before_action :set_color, only: [:destroy]
+    before_action :set_color, only: [:update, :destroy]
     def create
       @color_palette.colors.create(color_params)
+      head :ok
+    end
+
+    def update
+      @color.update(color_params)
       head :ok
     end
 
@@ -21,7 +26,7 @@ module ColorPalettes
     end
     
     def color_params
-      params.expect(color: [:hex])
+      params.expect(color: [:hex, :category])
     end
   end
 end

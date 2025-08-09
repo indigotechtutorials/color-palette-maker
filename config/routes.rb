@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :color_palettes do
     scope module: :color_palettes do
-      resources :colors, only: [:create, :destroy] do
+      resources :colors, only: [:create, :update, :destroy] do
         scope module: :colors do
           resources :positions, only: [:create]
         end

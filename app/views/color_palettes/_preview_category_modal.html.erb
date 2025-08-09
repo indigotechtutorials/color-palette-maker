@@ -1,0 +1,20 @@
+<dialog id="<%= dom_id(color, "preview-category-modal") %>" class="mx-auto w-full h-full bg-transparent" data-modal-opener-target="modal"> 
+  <div class="w-full h-full flex items-center justify-center">
+    <div class="max-w-2xl w-full h-[40vh] rounded-lg bg-white z-[555] p-4 flex flex-col items-center" data-modal-content>
+      <p class="text-3xl"> Set preview category </p>
+      <p class="text-lg max-w-lg mx-auto text-center"> When viewing the preview for color palette you can choose which elements are using this color </p>
+      <div class="w-full">
+        <%= form_with url: color_palette_color_path(color.color_palette, color), model: color, data: { action: "submit->modal-opener#close" } do |f| %>
+          <div class="flex flex-col gap-2 w-full">
+            <%= f.label :category %>
+            <%= f.select :category, options_for_select(["Header", "Paragraph", "Background", "Button Background", "Button Text"], color.category), { include_blank: true }, class: "w-full p-1 rounded-lg border-2 border-gray-200" %>
+          </div>
+          <div class="flex items-center gap-2 mt-4">
+            <%= f.submit "Save changes", class: "py-2 px-3 rounded-lg bg-blue-500 text-blue-50 cursor-pointer" %>
+            <%= link_to "Cancel", "#", data: { action: "modal-opener#close" }, class: "px-2 py-2 rounded-lg border-2 border-gray-900 text-gray-900" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</dialog>

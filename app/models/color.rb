@@ -4,6 +4,7 @@ class Color < ApplicationRecord
 
   after_create_commit :broadcast_new_color
   after_destroy_commit :broadcast_remove_color
+  #after_update_commit :broadcast_replace_color
 private
   def broadcast_new_color
     broadcast_append_to(color_palette, target: "color-palette", partial: "color_palettes/color",
@@ -13,4 +14,9 @@ private
   def broadcast_remove_color
     broadcast_remove_to(color_palette, target: ActionView::RecordIdentifier.dom_id(self))
   end
+
+  # def broadcast_replace_color
+  #   broadcast_replace_to(color_palette, target: ActionView::RecordIdentifier.dom_id(self), partial: "color_palettes/color",
+  #     locals: { color: self })
+  # end
 end

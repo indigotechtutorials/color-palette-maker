@@ -16,7 +16,7 @@
         </svg>
       <% end %>
 
-      <div data-dropdown-target="menu" class="absolute bottom-0 left-24 h-64 w-56 bg-white rounded-lg shadow-lg border border-gray-200 flex flex-col hidden">
+      <div data-dropdown-target="menu" class="absolute bottom-0 left-24 h-64 w-56 bg-white rounded-lg shadow-lg border border-gray-200 flex flex-col hidden z-[123]">
         <div class="w-full flex" data-controller="modal">
           <%= link_to "Set preview category", "#", class: "w-full text-gray-900 p-3 hover:bg-gray-200 text-center text-sm", 
             data: { action: "modal-opener#open dropdown#close", modal_id: dom_id(color, "preview-category-modal") } %>
@@ -27,11 +27,4 @@
   </div>
 </div>
 
-<dialog id="<%= dom_id(color, "preview-category-modal") %>" class="mx-auto w-full h-full bg-transparent" data-modal-opener-target="modal"> 
-  <div class="w-full h-full flex items-center justify-center">
-    <div class="max-w-2xl w-full h-[40vh] rounded-lg bg-white z-[555] p-4 flex flex-col items-center" data-modal-content>
-      <p class="text-3xl"> Set preview category </p>
-      <p class="text-lg max-w-lg mx-auto text-center"> When viewing the preview for color palette you can choose which elements are using this color </p>
-    </div>
-  </div>
-</dialog>
+<%= render "color_palettes/preview_category_modal", color: color %>

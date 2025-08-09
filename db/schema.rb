@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_09_075715) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_09_092223) do
   create_table "color_palettes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -25,6 +25,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_09_075715) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position"
+    t.string "category"
     t.index ["color_palette_id"], name: "index_colors_on_color_palette_id"
   end
 
