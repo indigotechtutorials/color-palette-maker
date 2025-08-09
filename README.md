@@ -1,25 +1,35 @@
-# README
+### Color Palette Maker
+#### Built with Ruby on Rails & Hotwire
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Make your next color palette using this awesome tool.
 
-Things you may want to cover:
+#### Prerequisites for installation
 
-* Ruby version
+You must have the following libraries and versions installed on your machine
 
-* System dependencies
+- Ruby 3.4.4
+- Rails 8
 
-* Configuration
+#### Installation Steps
 
-* Database creation
+1. Download the code
 
-* Database initialization
+`git clone https://github.com/indigotechtutorials/color-pallete-maker`
 
-* How to run the test suite
+2. Enter the codebase
 
-* Services (job queues, cache servers, search engines, etc.)
+`cd color-pallete-maker`
 
-* Deployment instructions
+3. Install gems
 
-* ...
-# color-pallete-maker
+`bundle install`
+
+4. Start the rails server
+
+`rails s`
+
+for development use `bin/dev` to compile new tailwind assets
+
+5. Visit the app in browser
+
+Open your favorite browser and head to http://localhost:3000
