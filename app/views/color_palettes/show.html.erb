@@ -3,16 +3,18 @@
 
 <div class="w-full">
   <h1 class="font-bold text-4xl mb-4"> <%= @color_palette.name %> </h1>
-  
-  <%= form_with url: color_palette_colors_path(@color_palette), model: @color_palette.colors.new do |f| %>
-    <div class="flex items-center gap-4">
-      <div class="flex flex-col gap-2">
-        <%= f.label :hex, "Select a color" %>
-        <%= f.color_field :hex %>
+  <div class="w-full flex items-center gap-4">
+    <%= form_with url: color_palette_colors_path(@color_palette), model: @color_palette.colors.new do |f| %>
+      <div class="flex items-center gap-4">
+        <div class="flex flex-col gap-2">
+          <%= f.label :hex, "Select a color" %>
+          <%= f.color_field :hex %>
+        </div>
+        <%= f.submit "Add color", class: "px-3 py-2 rounded-lg bg-blue-500 text-blue-50 shadow-sm cursor-pointer" %>
       </div>
-      <%= f.submit "Add color", class: "px-3 py-2 rounded-lg bg-blue-500 text-blue-50 shadow-sm cursor-pointer" %>
-    </div>
-  <% end %>
+    <% end %>
+    <%= link_to "Preview on UI", color_palette_previews_path(@color_palette), class: "px-3 py-2 rounded-lg bg-indigo-500 text-indigo-50 shadow-sm ml-auto" %>
+  </div>
 
   <div class="min-h-[70vh] w-full mt-4 flex overflow-x-auto" id="color-palette" data-controller="sortable">
     <%= render(partial: "color", collection: @color_palette.colors.order(position: :asc)) if @color_palette.colors.reload.any? %>

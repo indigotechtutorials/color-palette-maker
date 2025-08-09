@@ -1,0 +1,12 @@
+<% content_for :title, "Preview #{@color_palette.name} Color Palette with UI" %>
+<% @body_bg = @color_palette.background_color %>
+<div class="w-full flex flex-col">
+  <div class="flex mb-4">
+    <%= link_to "Back to palette", @color_palette, class: "px-3 py-2 text-blue-50",  style: "background-color: #{@color_palette.button_background_color}; color: #{@color_palette.button_text_color}" %>
+  </div>
+  <div class="w-full min-h-[80vh] flex flex-col items-center px-8 lg:px-0 gap-4">
+    <h1 class="text-5xl text-center font-semibold" style="color: <%= @color_palette.header_color %>"> Preview UI for <%= @color_palette.name %> </h1>
+    <p class="max-w-2xl text-2xl text-center" style="color: <%= @color_palette.paragraph_color %>"> This is a cool way to test out your color scheme with a real UI web page </p>
+    <%= link_to "#{@color_palette.name} is great!", "#", class: "px-3 py-2 rounded-lg text-lg", style: "background-color: #{@color_palette.button_background_color}; color: #{@color_palette.button_text_color}" %>
+  </div>
+</div>
