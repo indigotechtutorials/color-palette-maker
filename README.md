@@ -33,3 +33,5 @@ for development use `bin/dev` to compile new tailwind assets
 5. Visit the app in browser
 
 Open your favorite browser and head to http://localhost:3000
+
+<img width="1710" height="982" alt="Screenshot 2025-08-09 at 2 33 27 PM" src="https://github.com/user-attachments/assets/be84921d-0453-4622-a765-cf3cadd593fd" />
