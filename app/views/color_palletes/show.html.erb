@@ -1,0 +1,26 @@
+<% content_for :title, "#{@color_pallete.name} Color Pallete" %>
+<%= turbo_stream_from @color_pallete %>
+
+<div class="w-full">
+  <h1 class="font-bold text-4xl mb-4"> <%= @color_pallete.name %> </h1>
+  
+  <%= form_with url: color_pallete_colors_path(@color_pallete), model: @color_pallete.colors.new do |f| %>
+    <div class="flex items-center gap-4">
+      <div class="flex flex-col gap-2">
+        <%= f.label :hex, "Select a color" %>
+        <%= f.color_field :hex %>
+      </div>
+      <%= f.submit "Add color", class: "px-3 py-2 rounded-lg bg-blue-500 text-blue-50 shadow-sm cursor-pointer" %>
+    </div>
+  <% end %>
+
+  <div class="min-h-[70vh] w-full mt-4 flex overflow-x-auto" id="color-pallete">
+    <%= render(partial: "color", collection: @color_pallete.colors) if @color_pallete.colors.reload.any? %>
+  </div>
+
+  <div class="flex gap-4 mt-8">
+    <%= link_to "Edit this color pallete", edit_color_pallete_path(@color_pallete), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+    <%= link_to "Back to color palletes", color_palletes_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+    <%= button_to "Destroy this color pallete", @color_pallete, method: :delete, form_class: "sm:inline-block mt-2 sm:mt-0 sm:ml-2", class: "w-full rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
+  </div>
+</div>
