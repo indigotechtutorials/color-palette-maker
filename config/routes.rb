@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :color_palettes do
     scope module: :color_palettes do
-      resources :colors, only: [:create, :destroy]
+      resources :colors, only: [:create, :destroy] do
+        scope module: :colors do
+          resources :positions, only: [:create]
+        end
+      end
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
