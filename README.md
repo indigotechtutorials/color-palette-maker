@@ -35,3 +35,9 @@ for development use `bin/dev` to compile new tailwind assets
 Open your favorite browser and head to http://localhost:3000
 
 <img width="1710" height="982" alt="Screenshot 2025-08-09 at 2 33 27 PM" src="https://github.com/user-attachments/assets/be84921d-0453-4622-a765-cf3cadd593fd" />
+
+#### Preview your color palettes
+
+With our preview page you can see how your color scheme would look on a real website UI.
+
+Configure your colors to be used as different parts of the UI ( Background Color, Header Color, Paragraph Color, Button Background, and Button Text Color)
