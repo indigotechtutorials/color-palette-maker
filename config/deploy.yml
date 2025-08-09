@@ -1,8 +1,8 @@
 # Name of your application. Used to uniquely configure containers.
-service: color_pallete_maker
+service: color_palette_maker
 
 # Name of the container image.
-image: your-user/color_pallete_maker
+image: your-user/color_palette_maker
 
 # Deploy to these servers.
 servers:

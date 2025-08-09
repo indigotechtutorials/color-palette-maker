@@ -10,21 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_09_073131) do
-  create_table "color_palletes", force: :cascade do |t|
+ActiveRecord::Schema[8.0].define(version: 2025_08_09_075715) do
+  create_table "color_palettes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
-    t.index ["slug"], name: "index_color_palletes_on_slug", unique: true
+    t.index ["slug"], name: "index_color_palettes_on_slug", unique: true
   end
 
   create_table "colors", force: :cascade do |t|
-    t.integer "color_pallete_id", null: false
+    t.integer "color_palette_id", null: false
     t.string "hex"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["color_pallete_id"], name: "index_colors_on_color_pallete_id"
+    t.integer "position"
+    t.index ["color_palette_id"], name: "index_colors_on_color_palette_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -38,5 +39,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_09_073131) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  add_foreign_key "colors", "color_palletes"
+  add_foreign_key "colors", "color_palettes"
 end

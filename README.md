@@ -14,11 +14,11 @@ You must have the following libraries and versions installed on your machine
 
 1. Download the code
 
-`git clone https://github.com/indigotechtutorials/color-pallete-maker`
+`git clone https://github.com/indigotechtutorials/color-palette-maker`
 
 2. Enter the codebase
 
-`cd color-pallete-maker`
+`cd color-palette-maker`
 
 3. Install gems
 

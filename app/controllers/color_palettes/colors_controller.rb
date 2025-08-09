@@ -1,9 +1,9 @@
-module ColorPalletes
+module ColorPalettes
   class ColorsController < ApplicationController
-    before_action :set_color_pallete
+    before_action :set_color_palette
     before_action :set_color, only: [:destroy]
     def create
-      @color_pallete.colors.create(color_params)
+      @color_palette.colors.create(color_params)
       head :ok
     end
 
@@ -12,12 +12,12 @@ module ColorPalletes
       head :ok
     end
   private
-    def set_color_pallete
-      @color_pallete = ColorPallete.friendly.find(params[:color_pallete_id])
+    def set_color_palette
+      @color_palette = ColorPalette.friendly.find(params[:color_palette_id])
     end
 
     def set_color
-      @color = @color_pallete.colors.find(params[:id])
+      @color = @color_palette.colors.find(params[:id])
     end
     
     def color_params

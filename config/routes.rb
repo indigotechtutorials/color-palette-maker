@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :color_palletes do
-    scope module: :color_palletes do
+  resources :color_palettes do
+    scope module: :color_palettes do
       resources :colors, only: [:create, :destroy]
     end
   end
@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "color_palletes#index"
+  root "color_palettes#index"
 end
